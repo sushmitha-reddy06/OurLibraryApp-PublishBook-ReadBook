@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Frontend</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Publish Your Book</h1>
+        <form id="publishForm">
+            <label for="book_title">Book Title:</label>
+            <input type="text" id="book_title" name="book_title" required>
+            <label for="book_author">Author:</label>
+            <input type="text" id="book_author" name="book_author" required>
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            <label for="book_coverImg">Cover Image:</label><br>
+            <input type="file" id="book_coverImg", name="book_coverImg" accept="image/*" required><br>
+            <button type="submit">Publish</button><br>
+            <a href="./Books.html" class=" btn booksList">Books</a><br>
+            <a href="./dashboard2.html" class=" btn booksList">dashboard2</a>
+
+        </form>
+        <div id="message"></div>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <footer class="text-center bg-gray-800" style="background-color: grey; padding: 0 33% 1% 0; margin-top:2%;">
+        <div class="footer-section" style="text-decoration: none; margin: 4% -60% 0 0;"></div>
+            <h3 class="mb-5 font-semibold text-gray-400" style="margin-left: 50%;">About</h3>
+            <p class="text-lg text-gray-500" style="margin-left: 50%;"><b><i>OurLibrary</i></b> is dedicated to Publishers and Readers simultaneously.
+                Our goal is to make Publisher publish their own book at the same time Readers can also enjoy reading these books.
+                Thank you for visiting <b><i>OurLibrary</i></b>. Feel free to <a href="#" style="text-decoration: none; color: #fa9;">OuerLibrary@gmail.com</a> if you have any questions or feedback.</p>
+            <!-- <img class="nav-logo" src="../assets/logo.png" style="height: 100px; width: 250px; margin-left: 68%;"> -->
+            <p class="copyright"style="margin-left: 50%;">@copyrightSushmitha</p>
+            </div>
+            <div class="last-part" style="padding: 0 0 0 58%;">
+                <!-- <a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="color: white; text-decoration: none; padding-right: 10%;">About</a> -->
+                <a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="color: #fa9; text-decoration: none; padding-right: 12%;">Contact</a>
+                <a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="color: #fa9; text-decoration: none; padding-right: 10%;">Privacy policy</a>
+                <a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="color: #fa9; text-decoration: none; padding-right: 10%;">Terms of use</a>
+            </div>
+            <!-- <img class="nav-logo" src="../assets/logo.png" style="height: 100px; width: 250px; padding-left: 6%;"> -->
+    
+    
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish Book</title>
+    <link rel="stylesheet" href="./css/publish.css">
+</head>
+<body>
+    <h1>Publish a Book</h1>
+    <form id="publishForm" enctype="multipart/form-data">
+        <div>
+            <label for="bookTitle">Title:</label>
+            <input type="text" id="bookTitle" name="book_title" required>
+        </div>
+        <div>
+            <label for="bookAuthor">Author:</label>
+            <input type="text" id="bookAuthor" name="book_author" required>
+        </div>
+        <div>
+            <label for="bookCover">Cover Image:</label>
+            <input type="file" id="bookCover" name="file" required>
+        </div>
+        <button type="submit">Publish</button>
+    </form>
+
+    <script src="./js/publish.js"></script>
+</body>
+</html> -->

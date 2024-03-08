@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment Form</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add custom styles here */
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+    }
+
+    .rating > span {
+      display: inline-block;
+      position: relative;
+      font-size: 2.5em;
+      width: 1.1em;
+      color: #ccc; /* default color of stars */
+    }
+
+    .rating > span:hover:before,
+    .rating > span:hover ~ span:before {
+      content: "\2605";
+      position: absolute;
+      color: gold; /* color of stars on hover */
+    }
+
+    .rating > span:hover:before {
+      left: 0;
+    }
+
+    .rating > span:hover ~ span:before {
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Leave a Comment</h1>
+    <form id="commentForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" readonly>
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea class="form-control" id="comment" rows="3" placeholder="Enter your comment" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <div class="rating">
+          <span id="star5" data-value="5">&#x2606;</span>
+          <span id="star4" data-value="4">&#x2606;</span>
+          <span id="star3" data-value="3">&#x2606;</span>
+          <span id="star2" data-value="2">&#x2606;</span>
+          <span id="star1" data-value="1">&#x2606;</span>
+        </div>
+        <input type="hidden" id="rating" name="rating" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="message" class="mt-3"></div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./js/comment.js"></script>
+  <script>
+    document.querySelectorAll('.rating > span').forEach((star) => {
+      star.addEventListener('click', (event) => {
+        const rating = event.target.getAttribute('data-value');
+        document.getElementById('rating').value = rating;
+        document.querySelectorAll('.rating > span').forEach((s) => {
+          if (s.getAttribute('data-value') <= rating) {
+            s.innerHTML = '&#x2605;';
+            s.style.color = 'gold'; // Set color to gold for selected stars
+          } else {
+            s.innerHTML = '&#x2606;';
+            s.style.color = '#ccc'; // Reset color for unselected stars
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

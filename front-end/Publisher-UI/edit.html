@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book Details</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Book Details</h2>
+        <form id="editBookForm">
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required><br><br>
+
+            <label for="bookAuthor">Book Author:</label>
+            <input type="text" id="bookAuthor" name="bookAuthor" required><br><br>
+
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required><br><br>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required><br><br>
+
+            <label for="bookImage">Book Image:</label>
+            <input type="file" id="bookImage" name="bookImage"><br><br>
+
+            <button type="submit">Update Book Details</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    
+    <script src="./js/edit-book.js"></script>
+</body>
+</html>
+
+<style>
+    .container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
